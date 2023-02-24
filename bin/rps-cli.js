@@ -1,7 +1,8 @@
-import {rps} from '../lib/rpsls';
+import { rps } from '../lib/rpsls.js';
 import minimist from "minimist";
 
 const args = minimist(process.argv.slice(2));
+
 if(args.help || args.h) {
 	printHelp();
     process.exit(0);
@@ -13,24 +14,26 @@ if(args.r || args.rules) {
 
 }
 
-switch(args._.length) {
-    case args._.length == 0:
+var locz = args._length;
+
+switch(locz) {
+    case locz == 0:
         console.log(JSON.stringify(rps("none")));
         process.exit(0);
-    case args._.length == 1:
+    case locz == 1:
         var player = args._[0].toString().toLowerCase();
         if(player=="rock" || player=="paper" || player=="scissors")
         {
             console.log(JSON.stringify(rps(player)));
             process.exit(0);
         } else {
-            console.log("Invalid argument");
+            console.log("unknown input");
             printHelp();
             printRules();
             process.exit(0);
         }
     default:
-        console.log("[ARGUMENT] is out of range.");
+        console.log("out of range.");
         printHelp();
         printRules();
         process.exit(0);

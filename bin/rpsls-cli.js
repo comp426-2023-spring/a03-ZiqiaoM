@@ -13,25 +13,26 @@ if(args.rules || args.r) {
     process.exit(0);
 
 }
+var locz = args._length;
 
-switch(args._.length) {
-    case args._.length == 0:
+switch(locz) {
+    case locz == 0:
         console.log(JSON.stringify(rpsls("none")));
         process.exit(0);
-    case args._.length == 1:
+    case locz == 1:
         var player = args._[0].toString().toLowerCase();
         if(player=="rock" || player=="paper" || player=="scissors" || player=="lizard" || player=="spock")
         {
             console.log(JSON.stringify(rpsls(player)));
             process.exit(0);
         } else {
-            console.log("Invalid argument");
+            console.log("unknown input");
             printHelp();
             printRules();
             process.exit(0);
         }
     default:
-        console.log("[ARGUMENT] is out of range.");
+        console.log(" out of range.");
         printHelp();
         printRules();
         process.exit(0);
