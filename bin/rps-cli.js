@@ -3,6 +3,8 @@
 import {rps} from '../lib/rpsls.js';
 import minimist from "minimist";
 
+let test = 1;
+
 const args = minimist(process.argv.slice(2));
 
 if(args.help || args.h) {
