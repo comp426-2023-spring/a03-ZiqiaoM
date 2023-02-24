@@ -23,7 +23,7 @@
   "homepage": "https://github.com/comp426-2023-spring/a03-ZiqiaoM#readme",
 
   "dependencies": {
-    "minimist":"^1.28"
+    "minimist": "^1.2.7"
   },
   "type":"module"
 
